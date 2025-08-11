@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #0B2434;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+    padding: 3em;
+
+    background-color: #F5F5F5;
+
+    border-radius: 8px;
+}
+
+@media(max-width: 576px) {
+    .container {
+        border-radius: 0;
+    }
+}
+
+/* start of header */
+header {
+    text-align: center;
+}
+
+header h1 {
+    color: #2B283A;
+    font-size: 2.5rem;
+}
+
+header p {
+    color: #4A4E74;
+    font-size: 1.25rem;
+    margin: 0 auto;
+}
+
+/* numbers grid design */
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2em;
+
+    padding: 2em 0;
+}
+
+.numbers-grid button {
+    display: inline-block;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 6px;
+    background: white;
+    color: #2B283A;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+    font-size: 3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .6s ease;
+}
+
+.numbers-grid button.fixed {
+    background-color: #59E391;
+}
+
+.numbers-grid button:not(.fixed):hover {
+    background-color: rgb(237, 237, 237);
+}
+
+@media(max-width: 768px) {
+    .numbers-grid button {
+        font-size: 2rem;
+    }
+}
+
+/* button design */
+button.roll-btn {
+    background-color: #5035FF;
+    color: white;
+
+    display: block;
+    padding: .5em 2em;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .6s ease;
+}
+
+button.roll-btn:hover {
+    background-color: #3a1cfd;
+}
