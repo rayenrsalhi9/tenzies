@@ -43,6 +43,14 @@ export default function App() {
         />
 
         { isGameWon ? <ReactConfetti /> : null }
+        
+        <div aria-live='polite' className='sr-only'>
+          {
+            isGameWon ? 
+            <p>Congratulations! You won! Press "New Game" to start again.</p> :
+            null
+          }
+        </div>
 
     </div>
   )
