@@ -2,7 +2,7 @@ export default function RollButton({ action, setDice }) {
 
   function handleClick() {
     const newDice = action()
-    setDice(newDice)
+    setDice(prev => prev.map((el, index) => el.isFixed ? el : newDice[index]))
   }
 
   return (
