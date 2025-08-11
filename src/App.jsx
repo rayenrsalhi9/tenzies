@@ -1,5 +1,5 @@
 import Header from "./components/Header"
-import Number from "./components/Number"
+import Die from "./components/Die"
 import RollButton from "./components/RollButton"
 
 export default function App() {
@@ -7,7 +7,20 @@ export default function App() {
     <div className="container">
         
         <Header />
-        <Number />
+
+        <section className="numbers-grid">
+          <Die />
+          <Die />
+          <Die />
+          <Die />
+          <Die />
+          <Die />
+          <Die />
+          <Die />
+          <Die />
+          <Die />
+        </section>
+        
         <RollButton />
 
     </div>

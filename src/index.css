@@ -76,6 +76,7 @@ header p {
 
 .numbers-grid button.fixed {
     background-color: #59E391;
+    opacity: .8;
 }
 
 .numbers-grid button:not(.fixed):hover {
