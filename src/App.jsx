@@ -5,7 +5,7 @@ import RollButton from "./components/RollButton"
 
 export default function App() {
 
-  const [dice, setDice] = useState(() => generateAllNewDice())
+  const [dice, setDice] = useState(generateAllNewDice)
 
   function generateAllNewDice() {
 
@@ -33,7 +33,7 @@ export default function App() {
           { dice.map(el => <Die key={el.id} die={el} />) }
         </section>
         
-        <RollButton />
+        <RollButton action={generateAllNewDice} setDice={setDice} />
 
     </div>
   )
