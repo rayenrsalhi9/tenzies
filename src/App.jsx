@@ -20,8 +20,6 @@ export default function App() {
     }
 
     return diceArr
-
-    // shortcut: return new Array(10).fill(0).map(el => Math.ceil(Math.random() * 6))
   }
 
   return (
@@ -30,7 +28,7 @@ export default function App() {
         <Header />
 
         <section className="numbers-grid">
-          { dice.map(el => <Die key={el.id} die={el} />) }
+          { dice.map(el => <Die key={el.id} die={el} setDice={setDice} />) }
         </section>
         
         <RollButton action={generateAllNewDice} setDice={setDice} />
