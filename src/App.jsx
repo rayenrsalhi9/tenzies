@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from "./components/Header"
 import Die from "./components/Die"
 import RollButton from "./components/RollButton"
+import ReactConfetti from 'react-confetti'
 
 export default function App() {
 
@@ -40,6 +41,8 @@ export default function App() {
           setDice={setDice} 
           isGameWon={isGameWon} 
         />
+
+        { isGameWon ? <ReactConfetti /> : null }
 
     </div>
   )
