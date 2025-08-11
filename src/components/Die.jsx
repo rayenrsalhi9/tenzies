@@ -1,5 +1,5 @@
-export default function Die() {
+export default function Die({ die }) {
   return (
-        <button className="fixed">1</button>
+        <button>{ die.value }</button>
   )
 }
