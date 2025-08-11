@@ -22,6 +22,9 @@ export default function App() {
     return diceArr
   }
 
+  const isGameWon = dice.every(el => el.isFixed && el.value === dice[0].value)
+  if (isGameWon) console.log('game won!')
+    
   return (
     <div className="container">
         
