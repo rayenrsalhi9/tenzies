@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Header from "./components/Header"
 import Die from "./components/Die"
 import RollButton from "./components/RollButton"
@@ -7,6 +7,7 @@ import ReactConfetti from 'react-confetti'
 export default function App() {
 
   const [dice, setDice] = useState(() => generateAllNewDice())
+  const btnRef = useRef(null)
 
   function generateAllNewDice() {
 
@@ -24,6 +25,10 @@ export default function App() {
   }
 
   const isGameWon = dice.every(el => el.isFixed && el.value === dice[0].value)
+
+  useEffect(() => {
+    if(isGameWon) btnRef.current.focus()
+  }, [isGameWon])
     
   return (
     <div className="container">
@@ -40,6 +45,7 @@ export default function App() {
           action={generateAllNewDice} 
           setDice={setDice} 
           isGameWon={isGameWon} 
+          ref={btnRef}
         />
 
         { isGameWon ? <ReactConfetti /> : null }
