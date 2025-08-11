@@ -23,7 +23,6 @@ export default function App() {
   }
 
   const isGameWon = dice.every(el => el.isFixed && el.value === dice[0].value)
-  if (isGameWon) console.log('game won!')
     
   return (
     <div className="container">
@@ -31,10 +30,16 @@ export default function App() {
         <Header />
 
         <section className="numbers-grid">
-          { dice.map(el => <Die key={el.id} die={el} setDice={setDice} />) }
+          {
+            dice.map(el => <Die key={el.id} die={el} setDice={setDice} />)
+          }
         </section>
         
-        <RollButton action={generateAllNewDice} setDice={setDice} />
+        <RollButton 
+          action={generateAllNewDice} 
+          setDice={setDice} 
+          isGameWon={isGameWon} 
+        />
 
     </div>
   )

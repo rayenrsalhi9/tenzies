@@ -1,4 +1,4 @@
-export default function RollButton({ action, setDice }) {
+export default function RollButton({ action, setDice, isGameWon }) {
 
   function handleClick() {
     const newDice = action()
@@ -7,7 +7,7 @@ export default function RollButton({ action, setDice }) {
 
   return (
     <button className="roll-btn" onClick={handleClick}>
-        Roll
+        { isGameWon ? 'New Game' : 'Roll'}
     </button>
   )
 }
